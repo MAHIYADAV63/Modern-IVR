@@ -38,7 +38,7 @@ async def voice(request: Request):
     return Response(content=str(response), media_type="application/xml")
 
 
-# ✅ Use local JSON file (Mac compatible)
+
 def get_pnr_status(pnr):
     with open("irctc.json") as f:
         data = json.load(f)
@@ -80,7 +80,7 @@ async def process(simulated_text: str = Form(None)):
 # @app.get("/trigger-call")
 # async def trigger_call():
 #     call = client.calls.create(
-#         to="+918501071866",  # 🔴 Replace with your real verified number
+#         to="+91xxxxxxxxxx",  
 #         from_=TWILIO_NUMBER,
 #         url="https://tonie-superficial-formally.ngrok-free.dev/voice"
 #     )
@@ -90,7 +90,7 @@ async def process(simulated_text: str = Form(None)):
 @app.get("/trigger-call")
 async def trigger_call():
     call = client.calls.create(
-        to="+918501071866",   # ✅ your verified number (no spaces)
+        to="+91xxxxxxxxxx",   
         from_=TWILIO_NUMBER,
         url="https://tonie-superficial-formally.ngrok-free.dev/voice"
     )
